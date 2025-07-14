@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Versiculo from './components/Versiculo'
-import { Box, CssBaseline, Fade, GlobalStyles, Typography } from '@mui/material'
+import { Box, Container, CssBaseline, Fade, GlobalStyles, Typography } from '@mui/material'
 
 import Countdown from './components/Countdown'
 import Padres from './components/Padres'
