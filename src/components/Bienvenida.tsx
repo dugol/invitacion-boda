@@ -1,25 +1,22 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import ScrollDownIndicator from "./ScrollDownIndicator";
 
 export default function Bienvenida() {
     return (
         <>
-            <Box sx={{
-                height: '100vh',
-                width: '100vw',
-                display: 'flex',
-                alignItems: 'flex-start',
-                paddingTop: '25vh',
-                justifyContent: 'center',
-                textAlign: 'center',
-                backgroundImage: "url('/portada.jpg')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                overflowX: 'hidden',
-                position: 'relative'
-            }}>
-                <ScrollDownIndicator />
-            </Box>
+            <Container maxWidth="lg" sx={{ padding: 0, margin: 0 }}>
+                <Box
+                    sx={{ position: 'relative', height: '82vh', width: '100%' }}>
+                    <Box component="img" src="/portada.jpg" sx={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        cursor: "pointer"
+                    }}>
+                    </Box>
+                    <ScrollDownIndicator/>
+                </Box>
+            </Container>
         </>
     )
 
