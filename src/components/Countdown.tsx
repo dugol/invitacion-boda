@@ -2,8 +2,6 @@
 import { Box, Typography, Grid, Paper } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import '@fontsource/poiret-one';
-
 const targetDate = new Date("2025-10-26T15:00:00"); // 26 de Octubre 2025 - 3:00 p.m
 
 type TimeLeft = {
@@ -50,13 +48,13 @@ export default function Countdown() {
             backgroundPosition: 'center',
             overflowX: 'hidden',
         }}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#E0D2C2', fontFamily: 'Poiret One', fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#E0D2C2', fontFamily: 'Poiret One', fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                 26 OCTUBRE 2025
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#E0D2C2', fontFamily: 'Poiret One', fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#E0D2C2', fontFamily: 'Poiret One', fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                 4:00 PM
             </Typography>
-            
+
             <Grid container spacing={2} justifyContent="center">
                 {[
                     { label: "Días", value: timeLeft.days },
@@ -64,7 +62,7 @@ export default function Countdown() {
                     { label: "Minutos", value: timeLeft.minutes },
                     { label: "Segundos", value: timeLeft.seconds },
                 ].map((item) => (
-                    <Grid item key={item.label} paddingTop={'1rem'}>
+                    <Grid key={item.label} sx={{ paddingTop: '1rem' }}>
                         <Paper
                             elevation={4}
                             sx={{

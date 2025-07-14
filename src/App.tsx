@@ -3,9 +3,6 @@ import './App.css'
 import Versiculo from './components/Versiculo'
 import { Box, CssBaseline, Fade, GlobalStyles, Typography } from '@mui/material'
 
-import '@fontsource/libertinus-mono'
-import '@fontsource/poiret-one';
-
 import Countdown from './components/Countdown'
 import Padres from './components/Padres'
 import Lugar from './components/Lugar'
@@ -18,16 +15,16 @@ import AnimatedSection from './components/AnimatedSection'
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const audio = audioRef.current;
 
     // Intento de auto-reproducción
-    audio.play().then(() => {
+    audio?.play().then(() => {
       // El navegador permitió el autoplay
       setIsPlaying(true);
-    }).catch(error => {
+    }).catch(() => {
       // El navegador bloqueó el autoplay, el usuario deberá iniciarlo manualmente
       console.log("La auto-reproducción fue bloqueada por el navegador.");
       setIsPlaying(false);
@@ -36,16 +33,12 @@ function App() {
   // 1. Estado para controlar la visibilidad de la pantalla de inicio.
   const [portadaVisible, setPortadaVisible] = useState(true);
 
-  // 2. Referencia para saber a qué elemento debemos hacer scroll.
-  //    La inicializamos como null y le damos el tipo del elemento que la usará (un div).
-  const bienvenidaRef = useRef<HTMLDivElement>(null);
-
   // 3. Función que se ejecuta al hacer clic en el botón de la portada.
   const handleEmpezarClick = () => {
     if (isPlaying) {
-      audioRef.current.pause();
+      audioRef.current?.pause();
     } else {
-      audioRef.current.play();
+      audioRef.current?.play();
     }
     setIsPlaying(!isPlaying);
     setPortadaVisible(false);
