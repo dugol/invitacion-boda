@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import ScrollDownIndicator from "./ScrollDownIndicator";
 
 export default function Bienvenida() {
     return (
@@ -14,8 +15,11 @@ export default function Bienvenida() {
                 backgroundImage: "url('/portada.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                overflowX: 'hidden'
-            }}></Box>
+                overflowX: 'hidden',
+                position: 'relative'
+            }}>
+                <ScrollDownIndicator />
+            </Box>
         </>
     )
 

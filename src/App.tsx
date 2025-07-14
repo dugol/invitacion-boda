@@ -65,7 +65,7 @@ function App() {
 
       {inputGlobalStyles}
 
-      <Fade in={portadaVisible} timeout={2000} unmountOnExit>
+      <Fade in={portadaVisible} timeout={500} unmountOnExit>
         <Box
           sx={{
             position: 'fixed', // La fijamos para que ocupe toda la pantalla
